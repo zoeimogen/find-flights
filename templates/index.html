@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Finder</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+
+<body>
+    <div class="input-container">
+        <h1>Direct Flight Finder</h1>
+
+        <div class="form-container">
+            <form method="post">
+                <label for="from">From airport(s)</label>
+                <input type="text" name="from_airport" value="{{ form_data.from_airport }}"><br>
+
+                <label for="to">To airport(s)</label>
+                <input type="text" name="to_airport" value="{{ form_data.to_airport }}"><br>
+
+                <a href="https://iata-codes.com/en/" rel="noreferrer">IATA Code lookup for airports</a><br><br>
+
+                <label for="start_date">Start date:</label>
+                <input type="date" name="start_date" value="{{ form_data.start_date }}"><br>
+
+                <label for="end_date">End date:</label>
+                <input type="date" name="end_date" value="{{ form_data.end_date }}"><br>
+
+                <input type="checkbox" id="split-working-hours" name="split_working_hours" {% if form_data.split_working_hours
+                    %}checked{% endif %}>
+                <label for="split-working-hours">Split by working/non-working days/after 7pm using UK Bank
+                    holidays</label><br><br>
+
+                {% if error %}
+                <p style="color: red;">{{ error }}</p><br>
+                {% endif %}
+
+                <button type="submit">Search</button>
+
+            </form>
+        </div>
+
+    </div>
+    {% if flights %}
+    <div class="output-container">
+        <h2>Flights</h2>
+        {{ flights|safe }}
+    </div>
+    {% endif %}
+
+    {% if rejected_flights %}
+    <div class="output-container">
+        <h2>Flights During Working Hours</h2>
+        {{ rejected_flights|safe }}
+    </div>
+    {% endif %}
+</body>
+
+</html>

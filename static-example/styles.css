@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text p {
+    margin-bottom: 15px;
+    line-height: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.text .input-box {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #808080;
+    background: #101010;
+}
+
+.input-container {
+    display: block;
+    padding: 40px 40px;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.output-container {
+    gap: 10px;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+table {
+    display: block;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="checkbox"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(50% - 10px);
+}
+
+.form-container input[type="checkbox"] {
+    width: auto;
+    margin-top: 20px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #202020;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #404040;
+}

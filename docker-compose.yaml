@@ -1,0 +1,11 @@
+services:
+  flight_finder:
+    build:
+      context: .
+    container_name: flight_finder
+    ports:
+      - 5001:5001
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp

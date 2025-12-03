@@ -1,0 +1,5 @@
+[[tool.mypy.overrides]]
+module = ["google_flights.*", "govuk_bank_holidays.*"]
+follow_untyped_imports = true
+disallow_any_generics = true
+warn_unused_ignores = true
