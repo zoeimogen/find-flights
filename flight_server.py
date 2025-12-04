@@ -52,9 +52,11 @@ def index() -> str:
     form_data['end_date'] = end_date
 
     if (end_date_dt - start_date_dt).days > 14:
-        return render_template('index.html', error="Won't scan for more than two weeks at a time")
+        return render_template('index.html', form_data=form_data,
+                               error="Won't scan for more than two weeks at a time")
     if (end_date_dt - start_date_dt).days < 0:
-        return render_template('index.html', error="Start date is after end date")
+        return render_template('index.html', form_data=form_data,
+                               error="Start date is after end date")
 
     if request.method == 'POST':
         try:
